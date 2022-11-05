@@ -7,7 +7,7 @@ public abstract class Automobil {
     private String typeAuto;
 
 
-// getters **********************************************************************************************
+// getters ______________________________________________________________________________________________
 
     public String getBrand() { return brand;
     }
@@ -17,7 +17,7 @@ public abstract class Automobil {
     }
     public String getTypeAuto() { return typeAuto;
     }
-    // setters **********************************************************************************************
+// setters ______________________________________________________________________________________________
 
     public void setBrand(String brand) {
         this.brand = (brand != null && !brand.isBlank() && !brand.isEmpty()) ? brand : "default";
@@ -32,8 +32,7 @@ public abstract class Automobil {
     public void setTypeAuto(String typeAuto) {
         this.typeAuto = (typeAuto!= null && !typeAuto.isBlank() && !typeAuto.isEmpty())? typeAuto : "default";
     }
-    // constructor *******************************************************************************************
-
+ // constructor ______________________________________________________________________________________________
 
     public Automobil(String typeAuto, String brand, String model, double engineVolume) {
         setBrand(brand);
@@ -42,23 +41,27 @@ public abstract class Automobil {
         setTypeAuto(typeAuto);
     }
 
-    // Methods ************************************************************************************************
+    // Methods ______________________________________________________________________________________________
     @Override
     public String toString() {
-        return  this.typeAuto + ": " + this.brand + ", модель - " + this.model + ", V двигателя - " + this.engineVolume + ".";
+        return  this.typeAuto + ": " + this.brand + ", модель - " + this.model
+                              + ", V двигателя - " + this.engineVolume + ".";
     }
-    public static void printAuto (Automobil[] auto) {
-        for (Automobil el : auto) {
-            System.out.println(el);
-        }
-    }
+//    public static void printAuto (Automobil[] auto) {
+//        for (Automobil el : auto) {
+//            System.out.println(el);
+//        }
+//    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Automobil automobil = (Automobil) o;
-        return Double.compare(automobil.engineVolume, engineVolume) == 0 && Objects.equals(brand, automobil.brand) && Objects.equals(model, automobil.model) && Objects.equals(typeAuto, automobil.typeAuto);
+        return Double.compare(automobil.engineVolume, engineVolume) == 0
+                && Objects.equals(brand, automobil.brand)
+                && Objects.equals(model, automobil.model)
+                && Objects.equals(typeAuto, automobil.typeAuto);
     }
 
     @Override
@@ -67,7 +70,8 @@ public abstract class Automobil {
     }
     public abstract void startMoving ();
     public abstract void finishMove ();
+    public abstract void getDiagnosed ();
 
 
-}
+} // class ______________________________________________________________________________________________
 

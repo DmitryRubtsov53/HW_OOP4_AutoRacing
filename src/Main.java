@@ -1,24 +1,37 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Домашнее задание ООП4 Автогонки ********************************************************");
+        System.out.println("Домашнее задание Работа с исключениями ********************************************************");
         System.out.println();
 
-        Automobil[] auto = new Automobil[12];
+        Automobil audi = new Car("Car", "Audi", "A8 50L", 4.1);
+        Automobil  bmw = new Car("Car", "BMW", "Z05", 3.5);
+        Automobil  hyundai = new Car("Car", "Hyundai", "i70L", 3.7);
+        Automobil  kia = new Car("Car", "Kia", "Sport", 4.0);
+        Automobil  kamaz = new Truck("Truck", "КаМАЗ", "К850", 10.5);
+        Automobil  maz = new Truck("Truck", "МАЗ", "A650", 10.5);
+        Automobil  kraz = new Truck("Truck", "КрАЗ", "М1020", 12);
+        Automobil  gaz = new Truck("Truck", "ГАЗ", "1301", 8.5);
+        Automobil nefaz = new Bus("Bus", "НефАЗ", "Н456", 8.5);
+        Automobil paz = new Bus("Bus", "ПАЗ", "П587", 9);
+        Automobil liaz = new Bus("Bus", "ЛиАЗ", "Л110", 10);
+        Automobil gazon = new Bus("Bus", "ГАЗ", "Б1500", 9.5);
 
-        auto [0] = new Car ("Car", "Audi", "A8 50L", 4.1);
-        auto [1] = new Car ("Car", "BMW", "Z05", 3.5);
-        auto [2] = new Car ("Car", "Hyundai", "i70L", 3.7);
-        auto [3] = new Car ("Car", "Kia", "Sport", 4.0);
-        auto [4] = new Truck ("Truck", "КаМАЗ", "К850", 10.5);
-        auto [5] = new Truck ("Truck", "МАЗ>", "A650", 10.5);
-        auto [6] = new Truck ("Truck", "КрАЗ", "М1020", 12);
-        auto [7] = new Truck ("Truck", "ГАЗ", "1301", 8.5);
-        auto [8] = new Bus ("Bus", "НефАЗ", "Н456", 8.5);
-        auto [9] = new Bus ("Bus", "ПАЗ", "П587", 9);
-        auto [10] = new Bus ("Bus", "ЛиАЗ", "Л110", 10);
-        auto [11] = new Bus ("Bus", "ГАЗ", "Б1500", 9.5);
+// Диагностика ----------------------------------------------------------------------
+        audi.getDiagnosed();
+        kraz.getDiagnosed();
+        paz.getDiagnosed();
 
-        Automobil.printAuto(auto);
+        Driver<Car> ivan = new Driver<>("Иван", "B", 10 );
+        Driver<Truck> svan = new Driver<>("Сван", "C", 7 );
+        Driver<Bus> semen = new Driver<>("Семён", " ", 15 );
+
+// Проверка водительских прав --------------------------------------------------------
+        ivan.checkLicense();
+        svan.checkLicense();
+        semen.checkLicense();
+
+
+
     }
-}
+} // class Main
