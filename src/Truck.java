@@ -16,8 +16,8 @@ public class Truck extends Automobil implements Competing {
     }
 
     @Override
-    public void getDiagnosed() {
-        System.out.println("Грузовик " + this.getModel() + " прошел диагостику.");
+    public boolean diagnosed() {
+        return Math.random() > 0.75;
     }
 
  // methods interfase ________________________________________________________________________________________

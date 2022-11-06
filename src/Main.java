@@ -18,20 +18,34 @@ public class Main {
         Automobil gazon = new Bus("Bus", "ГАЗ", "Б1500", 9.5);
 
 // Диагностика ----------------------------------------------------------------------
-        audi.getDiagnosed();
-        kraz.getDiagnosed();
-        paz.getDiagnosed();
+        audi.diagnosed();
+        kraz.diagnosed();
+        paz.diagnosed();
 
         Driver<Car> ivan = new Driver<>("Иван", "B", 10 );
         Driver<Truck> svan = new Driver<>("Сван", "C", 7 );
-        Driver<Bus> semen = new Driver<>("Семён", " ", 15 );
+        Driver<Bus> semen = new Driver<>("Семён", "E", 15 );
 
 // Проверка водительских прав --------------------------------------------------------
         ivan.checkLicense();
         svan.checkLicense();
         semen.checkLicense();
 
-
-
+        System.out.println();
+        assa(audi,bmw,hyundai,kraz,maz,paz,gazon);
     }
+    public static void assa (Automobil... automobils) {
+        for (Automobil el : automobils) {
+            if (el.diagnosed()) {
+                try {
+                    throw new RuntimeException(el.getBrand() + " " + el.getModel() + " не прошла диагностику.");
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
+                }
+            } else
+            System.out.println(el.getBrand() + " " + el.getModel() + " к гонке готова." );
+        }
+    }
+
+
 } // class Main

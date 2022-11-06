@@ -16,8 +16,9 @@ public class Bus extends Automobil implements Competing {
     }
 
     @Override
-    public void getDiagnosed() {
-        System.out.println("Автобусу " + this.getModel() + " диагностика не требуется.");
+    public boolean diagnosed() {
+        System.out.println(getBrand() + " " + getModel() + " диагностика не требуется.");
+        return false;
     }
 
     // methods interfase _________________________________________________________________________________

@@ -18,8 +18,8 @@ public class Car extends Automobil implements Competing {
     }
 
     @Override
-    public void getDiagnosed() {
-        System.out.println("Автомобиль " + this.getModel() + " прошел диагостику.");
+    public boolean diagnosed() {
+       return Math.random() > 0.5;
     }
 
     // methods interfase ______________________________________________________________________________________________

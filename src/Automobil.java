@@ -70,7 +70,7 @@ public abstract class Automobil {
     }
     public abstract void startMoving ();
     public abstract void finishMove ();
-    public abstract void getDiagnosed ();
+    public abstract boolean diagnosed ();
 
 
 } // class ______________________________________________________________________________________________
